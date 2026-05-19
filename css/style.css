@@ -1663,3 +1663,91 @@ button {
         font-size: 0.78rem;
     }
 }
+
+/* ESCONDER ÍCONES 3D EM TABLET E MOBILE */
+
+@media (max-width: 1180px) {
+
+    .section-tool-divider,
+    .section-floating-tool,
+    .floating-tool,
+    .brand-floating-tool,
+    .brand-floating-tool-clipper {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
+
+/* TRAVA DE OVERFLOW HORIZONTAL */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+iframe {
+    max-width: 100%;
+}
+
+body {
+    position: relative;
+}
+
+/* AJUSTES MOBILE PARA EVITAR SCROLL LATERAL */
+
+@media (max-width: 768px) {
+
+    .hero,
+    .about,
+    .services,
+    .environment,
+    .reviews,
+    .schedule,
+    .brand-logo-section,
+    .location,
+    .site-footer {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: min(100% - 32px, var(--container));
+        max-width: 100%;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        transform: none;
+        overflow: hidden;
+    }
+
+    .carousel-track {
+        max-width: none;
+    }
+
+    .location-map,
+    .location-map iframe {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .btn,
+    .header-cta,
+    .schedule-button {
+        max-width: 100%;
+    }
+}
