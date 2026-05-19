@@ -1751,3 +1751,111 @@ body {
         max-width: 100%;
     }
 }
+
+/* HERO MOBILE — TEXTO EM CIMA, FOTO VISÍVEL EMBAIXO */
+
+@media (max-width: 768px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+
+        min-height: auto;
+        padding-top: 0;
+
+        background:
+            radial-gradient(circle at top right, rgba(196, 132, 76, 0.12), transparent 34%),
+            #050505;
+
+        overflow: hidden;
+    }
+
+    .hero-container {
+        order: 1;
+        position: relative;
+        z-index: 3;
+
+        width: 100%;
+        padding-top: 110px;
+        padding-bottom: 28px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-background {
+        order: 2;
+
+        position: relative;
+        inset: auto;
+        z-index: 1;
+
+        width: calc(100% - 32px);
+        height: 390px;
+
+        margin: 0 auto 42px;
+
+        border: 1px solid rgba(210, 145, 86, 0.25);
+        border-radius: 22px;
+        overflow: hidden;
+
+        box-shadow: 0 26px 60px rgba(0, 0, 0, 0.48);
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+
+        background:
+            linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.08),
+                rgba(0, 0, 0, 0.10) 55%,
+                rgba(0, 0, 0, 0.70) 100%);
+    }
+
+    .hero-title {
+        max-width: 100%;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-highlights {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 16px;
+
+        margin-top: 30px;
+    }
+
+    .hero-highlight {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .hero-highlight:nth-child(3) {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
